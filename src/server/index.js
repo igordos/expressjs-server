@@ -18,13 +18,13 @@ app.use(
   }),
 );
 app.use(webpackHotServerMiddleware(compiler));
+
+// Secure
 app.use(helmet());
 
 app.get('/', (req, res) => {
   res.send('start');
 });
-
-app.disable('x-powered-by');
 
 app.listen(3000, () => {
   console.log('Server started');
